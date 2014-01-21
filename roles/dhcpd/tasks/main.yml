@@ -1,0 +1,5 @@
+---
+- name: Install dhcpd
+  pacman: name=dhcp state=installed
+- name: Configure dhcpd
+  copy: src=dhcpd.conf dest=/etc/dhcpd.conf owner=root group=root mode=0644

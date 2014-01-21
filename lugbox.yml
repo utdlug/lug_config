@@ -1,0 +1,6 @@
+---
+- hosts: lugbox
+  sudo: yes
+  roles:
+  - gateway
+  - dhcpd

@@ -1,0 +1,6 @@
+---
+- name: Configure firewall
+  copy: src={{ item }} dest=/etc/iptables/{{ item }} owner=root group=root mode=0644
+  with_items:
+  - iptables.rules
+  - ip6tables.rules
