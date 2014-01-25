@@ -1,0 +1,3 @@
+---
+- hosts: lug
+  sudo: yes

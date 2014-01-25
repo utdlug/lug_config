@@ -1,6 +1,10 @@
 ---
 - hosts: lugbox
   sudo: yes
+  gather_facts: false
+  pre_tasks:
+  - name: Install python2
+    raw: pacman -Sy --noconfirm python2
   roles:
   - gateway
   - dhcpd
