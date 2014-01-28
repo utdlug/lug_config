@@ -1,7 +1,7 @@
 ---
 #This playbook will install epel which will allow us to install node.js
 - name: Check if epel is already installed
-  command: yum repolist |grep epel
+  command: yum repolist |egrep ^epel
   register: result
   ignore_errors: True
 - name: Grab epel .rpm archive and install with rpm
