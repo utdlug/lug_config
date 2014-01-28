@@ -8,3 +8,5 @@
   roles:
   - gateway
   - dhcpd
+  - dhcpcd
+  - lugbox_network
