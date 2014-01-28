@@ -1,0 +1,6 @@
+---
+#This playbook will install node.js and npm
+- name: Install node with yum
+  yum: name=nodejs enablerepo=epel state=present
+- name: Install npm with yum
+  yum: name=npm enablerepo=epel state=present

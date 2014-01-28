@@ -1,0 +1,9 @@
+---
+#This playbook will install epel which will allow us to install node.js
+- name: Check if epel is already installed
+  command: yum repolist |grep epel
+  register: result
+  ignore_errors: True
+- name: Grab epel .rpm archive and install with rpm
+  command: rpm -i 'http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm'
+  when: result|failed
