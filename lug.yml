@@ -1,7 +1,6 @@
 ---
-- name: set up epel and install node.js
+- name: Install node.js
   hosts: lug
   sudo: yes
   roles:
-  - epel
   - node
