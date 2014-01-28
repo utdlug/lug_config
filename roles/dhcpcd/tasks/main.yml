@@ -1,5 +1,7 @@
 ---
 - name: Install dhcpcd
   pacman: name=dhcpcd state=installed
-- name: Configure dhcpcd
-  copy: src=dhcpcd.conf dest=/etc/dhcpcd.conf owner=root group=root mode=0644        
+- name: Configure dhcpcd preferences
+  copy: src=dhcpcd.conf dest=/etc/dhcpcd.conf owner=root group=root mode=0644
+- name: Configure dhcpcd service
+  copy: src=dhcpcd@enp2s11.service dest=/etc/systemd/system/multi-user.target.wants/dhcpcd@enp2s11.service owner=root mode=0644

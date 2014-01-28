@@ -1,0 +1,5 @@
+---
+- name: enp2s9 network service
+  copy: src=network@.service dest=/etc/systemd/system/network@.service user=root mode=0644
+- name: Assign Static IP to enp2s9
+  copy: src=network@enp2s9 dest=/etc/conf.d/network@enp2s9 user=root mode=0644
