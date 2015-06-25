@@ -1,0 +1,5 @@
+---
+- hosts: ltsp
+  sudo: yes
+  roles:
+  - ltsp
