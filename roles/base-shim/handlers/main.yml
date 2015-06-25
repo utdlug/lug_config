@@ -1,0 +1,11 @@
+- name: networking
+  debug: base-shim networking handler called
+
+- name: iptables
+  debug: base-shim iptables reload called
+
+- name: ntp
+  service: name=ntp state=restarted
+
+- name: sshd
+  service: name=ssh state=restarted

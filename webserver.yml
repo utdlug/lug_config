@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  sudo: yes
+  roles:
+  - base-shim
+  - apache2
+  - jekyll
+

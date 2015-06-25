@@ -1,0 +1,36 @@
+---
+- name: Install dependencies
+  apt: name={{ item }} state=present
+  with_items:
+  - ruby-full
+  - ruby-dev
+  - nodejs
+  - build-essential
+  - git
+
+- name: Install firewall rules
+  copy: src=jekyll.rules dest=/etc/iptables.d/jekyll.rules owner=root group=root mode=0640
+  notify:
+  - iptables
+
+- name: Install Jekyll
+  gem: name=jekyll state=present user_install=no
+
+- name: Get Site Files
+  git: clone=yes depth=1 force=yes dest=/tmp/jekyll repo=https://github.com/utdlug/utdlug.github.io.git
+
+- name: Create Jekyll site folder
+  file: path=/var/www/home state=directory owner=root group=root mode=0755
+
+- name: Build Site
+  command: jekyll build --destination=/var/www/home/ chdir=/tmp/jekyll
+
+- name: Copy Site descriptor
+  copy: src=jekyll.conf dest=/etc/apache2/sites-available/ owner=root group=root mode=0644
+  notify:
+  - apache2
+
+- name: Enable Site
+  file: src=../sites-available/jekyll.conf dest=/etc/apache2/sites-enabled/jekyll.conf state=link owner=root group=root
+  notify:
+  - apache2
