@@ -1,6 +1,6 @@
 [submodule "roles/gateway"]
 	path = roles/gateway
-	url = git@github.com:the-maldridge/obsd-gw
+	url = git@github.com:utdlug/obsd-gw
 [submodule "roles/ltsp"]
 	path = roles/ltsp
 	url = git@github.com:the-maldridge/ubuntu_ltsp.git
