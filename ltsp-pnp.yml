@@ -1,0 +1,7 @@
+---
+- hosts: ltsp-pnp
+  sudo: yes
+  roles:
+  - base-shim
+  - ltsp-pnp
+  - tftp

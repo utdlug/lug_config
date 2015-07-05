@@ -4,3 +4,6 @@
 [submodule "roles/ltsp"]
 	path = roles/ltsp
 	url = git@github.com:the-maldridge/ubuntu_ltsp.git
+[submodule "roles/ltsp-pnp"]
+	path = roles/ltsp-pnp
+	url = git@github.com:the-maldridge/ltsp-pnp.git
