@@ -7,3 +7,6 @@
 [submodule "roles/ltsp-pnp"]
 	path = roles/ltsp-pnp
 	url = git@github.com:the-maldridge/ltsp-pnp.git
+[submodule "roles/steam-ltsp-pnp"]
+	path = roles/steam-ltsp-pnp
+	url = git@github.com:the-maldridge/steam-ltsp-pnp.git
