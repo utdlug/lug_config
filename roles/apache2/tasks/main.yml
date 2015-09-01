@@ -16,8 +16,9 @@
   notify:
   - apache2
 
-- name: Enable PHP
+- name: Enable Modules
   apache2_module: name=php5 state=present
+  apache2_module: name=ssl state=present
 
 - name: Add sites-available
   copy: src=sites-available dest=/etc/apache2/ owner=root group=root mode=0644 directory_mode=0755
