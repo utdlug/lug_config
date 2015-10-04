@@ -9,3 +9,9 @@ test-alexandria
 
 [webserver]
 lug.utdallas.edu
+
+[luggable-gw]
+luggable-gw
+
+[luggable]
+luggable

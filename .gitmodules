@@ -10,3 +10,6 @@
 [submodule "roles/steam-ltsp-pnp"]
 	path = roles/steam-ltsp-pnp
 	url = git@github.com:the-maldridge/steam-ltsp-pnp.git
+[submodule "roles/luggable-gw"]
+	path = roles/luggable-gw
+	url = git@github.com:utdlug/obsd-gw.git

@@ -1,0 +1,9 @@
+---
+- name: Download the Ubuntu Installer
+  get_url: url=http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz dest=/tmp/netboot.tar.gz
+
+- name: Create tftproot
+  file: path=/srv/tftp/ state=directory owner=root group=root mode=0755
+
+- name: Expand the Ubuntu Installer
+  unarchive: src=/tmp/netboot.tar.gz dest=/srv/tftp/ copy=no creates=/srv/tftp/ubuntu-installer

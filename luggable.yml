@@ -1,0 +1,11 @@
+---
+- hosts: luggable
+  sudo: yes
+  roles:
+  - base-shim
+  - apache2
+  - tftp
+  - ubuntu_tftp
+  - ubuntu_installSite
+  - apt_mirror
+
