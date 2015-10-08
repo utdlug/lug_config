@@ -1,0 +1,7 @@
+---
+- name: Put a TTY on the serial port
+  lineinfile: dest=/etc/ttys regexp="^tty00" line='tty00 "/usr/libexec/getty std.9600" vt220 on secure'
+
+- name: Set the boot output to serial port
+  lineinfile: dest=/etc/boot.conf create=yes line="set tty com0"
+
