@@ -13,3 +13,6 @@
 [submodule "roles/luggable-gw"]
 	path = roles/luggable-gw
 	url = git@github.com:utdlug/obsd-gw.git
+[submodule "library/ansible_xbps"]
+	path = library/ansible_xbps
+	url = git@github.com:dinoocch/ansible_xbps.git
