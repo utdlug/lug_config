@@ -4,9 +4,6 @@ lugbox
 [ltsp]
 alexandria
 
-[ltsp-pnp]
-test-alexandria
-
 [webserver]
 lug.utdallas.edu
 
