@@ -4,6 +4,7 @@
   with_items:
   - tftp-hpa
   - tftpd-hpa
+  - openbsd-inetd
 
 - name: Configure tftpd-hpa
   copy: src=tftpd-hpa dest=/etc/default/ owner=root group=root mode=0644
@@ -14,6 +15,10 @@
   copy: src=tftp.rules dest=/etc/iptables.d owner=root group=root mode=0640
   notify:
   - iptables
+
+- name: Configure inetd
+  copy: src=inetd.conf dest=/etc/inetd.conf owner=root group=root mode=0640
+  notify: inetd
 
 - name: Add conntrack_tftp module
   lineinfile: dest=/etc/modules line=ip_conntrack_tftp

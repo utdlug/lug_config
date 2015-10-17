@@ -4,3 +4,6 @@
 
 - name: kmod
   service: name=kmod state=started
+
+- name: inetd
+  service: name=openbsd-inetd state=restarted
