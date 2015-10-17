@@ -1,7 +1,17 @@
 ---
+- name: Create directory
+  file: path=/var/www/install state=directory owner=root group=root mode=0755
+
 - name: Get the ubuntu Install disk
-  get_url: url=http://releases.ubuntu.com/14.04.3/ubuntu-14.04.3-server-amd64.iso dest=/var/www/html/ubuntu.iso
+  get_url: url=http://releases.ubuntu.com/14.04.3/ubuntu-14.04.3-server-amd64.iso dest=/var/www/install/ubuntu.iso
 
 - name: Add index page
-  copy: src=index.html dest=/var/www/html/index.html owner=root group=root mode=0644
+  copy: src=index.html dest=/var/www/install/index.html owner=root group=root mode=0644
 
+- name: Copy apache config
+  copy: src=install.conf dest=/etc/apache2/sites-available owner=root group=root mode=0644
+
+- name: Enable site
+  file: src=../sites-available/install.conf dest=/etc/apache2/sites-enabled/install.conf state=link owner=root group=root
+  notify:
+  - apache2
