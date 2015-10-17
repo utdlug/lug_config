@@ -2,4 +2,5 @@
 - hosts: ltsp
   sudo: yes
   roles:
+  - base-shim
   - ltsp
