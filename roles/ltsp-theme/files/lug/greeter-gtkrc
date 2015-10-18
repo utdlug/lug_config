@@ -23,6 +23,12 @@ style "clearlooks-default"
     GtkButton      ::child-displacement-x = 1
     GtkButton      ::child-displacement-y = 1
 
+    text[NORMAL]      = "#ffffff"
+    text[ACTIVE]      = "#ffffff"
+    text[INSENSITIVE] = "#ffffff"
+    text[PRELIGHT]    = "#ffffff"
+    text[SELECTED]    = "#ffffff"
+
     bg[PRELIGHT]      = "#9baada"
     bg[SELECTED]      = "#637a9a"
 
