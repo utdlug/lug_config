@@ -1,0 +1,5 @@
+---
+- hosts: idlebox
+  sudo: yes
+  roles:
+  - idlebox

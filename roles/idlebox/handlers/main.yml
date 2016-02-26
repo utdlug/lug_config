@@ -1,0 +1,6 @@
+---
+- name: idle-iptables
+  command: /etc/network/if-up.d/iptables
+
+- name: idle-sshd
+  service: name=ssh state=restarted

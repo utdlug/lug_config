@@ -1,0 +1,60 @@
+---
+- name: Configure resolvconf
+  copy: src=resolv.conf dest=/etc/resolvconf/resolv.conf.d/base owner=root group=root mode=0644
+
+- name: Add iptables script
+  copy: src=iptables dest=/etc/network/if-up.d/iptables owner=root group=root mode=0740
+
+- name: Make iptables.d
+  file: path=/etc/iptables.d state=directory owner=root group=root mode=0740
+
+- name: Configure IPv4 firewall
+  copy: src={{ item }} dest=/etc/iptables.d/{{ item }} owner=root group=root mode=0640
+  with_items:
+    - 0common.rules
+    - idle-box.rules
+  notify:
+  - idle-iptables
+
+- name: Configure IPv6 firewall
+  copy: src=ip6tables.conf dest=/etc/ip6tables.conf owner=root group=root mode=0640
+  notify:
+  - idle-iptables
+
+- name: Configure hostname 1/2
+  copy: src=hostname dest=/etc/hostname owner=root group=root mode=0644
+
+- name: Configure hostname 2/2
+  copy: src=hosts dest=/etc/hosts owner=root group=root mode=0644
+
+- name: Configure sshd
+  copy: src=sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644
+  notify:
+  - idle-sshd
+
+- name: Add SSH banner
+  copy: src=ssh_banner dest=/etc/ssh/banner owner=root group=root mode=0644
+  notify:
+  - idle-sshd
+
+- name: Add weechat repository
+  apt_repository: repo=ppa:nesthib/weechat-stable update_cache=yes
+
+- name: Install idle-box packages
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+  - bc
+  - git
+  - irssi
+  - mosh
+  - screen
+  - tmux
+  - zsh
+  # For SASL in irssi
+  - libcrypt-blowfish-perl
+  - libcrypt-dh-perl
+  - libcrypt-openssl-bignum-perl
+  # For jabber in weechat
+  - python-xmpp
+  - weechat-curses
+  - weechat-plugins
