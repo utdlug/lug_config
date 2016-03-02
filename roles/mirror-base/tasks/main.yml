@@ -1,0 +1,15 @@
+---
+- name: Create the reposync group
+  group: name=reposync state=present
+
+- name: Create the reposync User
+  user: name=reposync state=present
+
+- name: Make mirror web-visible
+  file: src=/mnt/mirrordata dest=/var/www/home/mirror state=link
+
+- name: Allow DLF within the mirror
+  copy: src=htaccess dest=/mnt/mirrordata/.htaccess owner=root group=root mode=0644
+
+- name: Allow the web user to read the mirror
+  user: name=www-data group=reposync
