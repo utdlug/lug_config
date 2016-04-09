@@ -1,18 +1,6 @@
-[submodule "roles/gateway"]
-	path = roles/gateway
-	url = git@github.com:utdlug/obsd-gw
-[submodule "roles/ltsp"]
-	path = roles/ltsp
-	url = git@github.com:the-maldridge/ubuntu_ltsp.git
-[submodule "roles/ltsp-pnp"]
-	path = roles/ltsp-pnp
-	url = git@github.com:the-maldridge/ltsp-pnp.git
-[submodule "roles/steam-ltsp-pnp"]
-	path = roles/steam-ltsp-pnp
-	url = git@github.com:the-maldridge/steam-ltsp-pnp.git
-[submodule "roles/luggable-gw"]
-	path = roles/luggable-gw
-	url = git@github.com:utdlug/obsd-gw.git
+[submodule "roles/gateway-base"]
+	path = roles/gateway-base
+	url = git@github.com:utdlug/gateway-base
 [submodule "library/ansible_xbps"]
 	path = library/ansible_xbps
 	url = git@github.com:dinoocch/ansible_xbps.git
