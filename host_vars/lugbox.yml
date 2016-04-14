@@ -1,0 +1,37 @@
+---
+gw_network: 192.168.1.0
+
+dhcp_self: 192.168.1.1
+dhcp_lower: 192.168.1.2
+dhcp_upper: 192.168.1.50
+
+domain: lab.lug.utdallas.edu
+hostname: lugbox
+
+dns_SOA: 2016041301
+
+int_int: fxp0
+ext_int: bge0
+
+boot_fname: /ltsp/i386/pxelinux.0
+boot_next: 192.168.1.2
+
+ntp:
+- pool.ntp.org
+
+staticHosts:
+  ltsp:
+    mac: c8:9c:dc:6d:20:ba
+    addr: 192.168.1.2
+    name: alexandria
+  luggable-gw:
+    mac: c8:9c:dc:6d:20:ba
+    addr: 192.168.1.14
+    name: luggable-gw
+
+stub-zones:
+  UTD:
+    name: utdallas.edu
+    addresses:
+      primary: 10.180.15.160
+      secondary: 10.182.70.107
