@@ -1,0 +1,27 @@
+---
+gw_network: 192.168.2.0
+
+dhcp_self: 192.168.2.1
+dhcp_lower: 192.168.2.2
+dhcp_upper: 192.168.2.50
+
+domain: luggable.lug.utdallas.edu
+hostname: cardboard
+
+dns_SOA: 2016041501
+
+int_int: bge0
+ext_int: re0
+
+boot_fname:
+boot_next:
+
+ntp:
+- pool.ntp.org
+
+stub-zones:
+  UTD:
+    name: utdallas.edu
+    addresses:
+      primary: 10.180.15.160
+      secondary: 10.182.70.107

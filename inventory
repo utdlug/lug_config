@@ -1,17 +1,12 @@
 [gateway]
 lugbox
+lug-cardboard
 
 [ltsp]
 alexandria
 
 [webserver]
 lug.utdallas.edu
-
-[luggable-gw]
-luggable-gw
-
-[luggable]
-luggable
 
 [idlebox]
 lug-idler
