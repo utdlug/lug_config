@@ -1,6 +1,7 @@
 ---
 - name: Create mirror directories
   file: path=/mnt/mirrordata/void state=directory owner=reposync group=reposync mode=0755
+  file: path=/mnt/mirrordata/void-musl state=directory owner=reposync group=reposync mode=0755
 
 - name: Install sync crontab
   copy: src=void-mirror.cron dest=/etc/cron.d/void-mirror owner=root group=root mode=0644
