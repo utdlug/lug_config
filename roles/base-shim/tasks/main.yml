@@ -1,3 +1,0 @@
----
-- name: Create iptables.d directory
-  file: path=/etc/iptables.d state=directory owner=root group=root mode=0740

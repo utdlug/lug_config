@@ -1,8 +1,11 @@
 ---
 - hosts: webserver
-  sudo: yes
+  become: yes
   roles:
-  - base-shim
-  - apache2
-  - jekyll
-  - void-mirror
+    - network
+    - xbps-repoconf
+    - core-daemons
+    - core-programs
+    - sshd
+    - jekyll
+    - void-mirror

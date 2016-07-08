@@ -1,0 +1,9 @@
+---
+- name: Install core tools
+  xbps: pkg={{ item }} state=present
+  with_items:
+    - acl-progs
+    - dialog
+    - htop
+    - tmux
+    - zsh
