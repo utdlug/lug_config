@@ -1,0 +1,10 @@
+---
+- hosts: utility
+  become: yes
+  roles:
+    - network
+    - xbps-repoconf
+    - core-daemons
+    - core-programs
+    - sshd
+    - tftp

@@ -1,0 +1,31 @@
+---
+- name: Add tftp-hpa Package
+  xbps: pkg=tftp-hpa state=present
+
+- name: Install TFTP Rules
+  copy: src=tftp.rules dest=/etc/iptables.d owner=root group=root mode=0640
+  notify:
+  - iptables
+
+- name: Ensure modules-load.d exists
+  file: path=/etc/modules-load.d state=directory owner=root group=root mode=0755
+
+- name: Configure tftp_conntrack module
+  copy: src=tftp.conf dest=/etc/modules-load.d/tftp.conf owner=root group=root mode=0644
+  notify:
+    - ip_conntrack_tftp
+
+- name: Create TFTP Root
+  file: path=/srv/tftp state=directory mode=0755 owner=root group=root
+
+- name: Fix tftp root permissions
+  file: path=/srv/tftp state=directory owner=root group=root mode=0755
+
+- name: Create tftp service directory
+  file: path=/etc/sv/tftpd state=directory owner=root group=root mode=0755
+
+- name: Install tftp-hpa service file
+  copy: src=tftp-run dest=/etc/sv/tftpd/run owner=root group=root mode=0755
+
+- name: Enable tftpd
+  file: src=/etc/sv/tftpd dest=/var/service/tftpd state=link owner=root group=root mode=0755
