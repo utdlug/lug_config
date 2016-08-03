@@ -6,7 +6,7 @@
   user: name=reposync state=present
 
 - name: Make mirror web-visible
-  file: src=/mnt/mirrordata dest=/var/www/home/mirror state=link
+  file: src=/mnt/mirror dest=/var/www/home/mirror state=link force=yes
 
 - name: Allow the web user to read the mirror
-  user: name=www-data group=reposync
+  user: name=nginx group=reposync

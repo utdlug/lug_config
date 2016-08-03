@@ -1,11 +1,11 @@
 ---
 - name: Install dependencies
-  apt: name={{ item }} state=present
+  xbps: name={{ item }} state=present
   with_items:
-  - ruby-full
-  - ruby-dev
+  - ruby
+  - ruby-devel
   - nodejs
-  - build-essential
+  - base-devel
   - git
 
 - name: Install firewall rules
@@ -14,35 +14,42 @@
   - iptables
 
 - name: Install Jekyll
-  gem: name=jekyll state=present user_install=no
+  gem: name={{ item }} state=present user_install=no
+  with_items:
+    - jekyll
+    - jekyll-paginate
 
 - name: Get Site Files
-  git: clone=yes depth=1 force=yes dest=/tmp/jekyll repo=https://github.com/utdlug/utdlug.github.io.git
+  git: clone=yes depth=1 force=yes dest=/tmp/cv_jekyll repo=https://github.com/utdlug/utdlug.github.io.git
 
 - name: Create Jekyll site folder
-  file: path=/var/www/home state=directory owner=root group=root mode=0755
+  file: path=/var/www/home state=directory owner=root group=nginx mode=0755
 
 - name: Build Site
-  command: jekyll build --destination=/var/www/home chdir=/tmp/jekyll
+  command: jekyll build --destination=/var/www/home/ chdir=/tmp/cv_jekyll
 
-- name: Copy Site descriptor
-  copy: src=jekyll.conf dest=/etc/apache2/sites-available/ owner=root group=root mode=0644
+- name: Fix Site permissions
+  file: path=/var/www/home owner=root group=nginx mode=go+rX recurse=yes
+
+- name: Create certificate directory
+  file: path=/etc/nginx/certs state=directory owner=root group=nginx mode=0750
+
+- name: Copy certificates
+  copy: src=secret/{{ item }} dest=/etc/nginx/certs/{{ item }} owner=root group=nginx mode=0640
+  with_items:
+    - lug_utdallas_edu.cer
+    - lug_utdallas_edu.pem
+
+- name: Copy dhparam.pem
+  copy: src=dhparam.pem dest=/etc/nginx/certs/lug_dhparam.pem owner=root group=nginx mode=0640
   notify:
-  - apache2
+    - nginx
+- name: Copy Site descriptor
+  copy: src=jekyll.conf dest=/etc/nginx/sites-available/ owner=root group=root mode=0644
+  notify:
+    - nginx
 
 - name: Enable Site
-  file: src=../sites-available/jekyll.conf dest=/etc/apache2/sites-enabled/jekyll.conf state=link owner=root group=root
+  file: src=../sites-available/jekyll.conf dest=/etc/nginx/sites-enabled/jekyll.conf state=link owner=root group=root
   notify:
-  - apache2
-
-- name: Create SSL Directory
-  file: path=/etc/ssl/local state=directory owner=root group=www-data mode=0750
-
-- name: Copy SSL files
-  copy: src=secret/{{ item }} dest=/etc/ssl/local/{{ item }} owner=root group=www-data mode=0640 directory_mode=0750
-  with_items:
-  - lug_utdallas_edu_cert.cer
-  - lug_utdallas_edu_interm.cer
-  - webserver_key.pem
-  notify:
-  - apache2
+    - nginx

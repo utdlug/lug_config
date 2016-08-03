@@ -1,4 +1,4 @@
 ---
 dependencies:
-  - role: apache2
-  - role: mirror-base
+  - { role: nginx }
+  - { role: mirror-base }

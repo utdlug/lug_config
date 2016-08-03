@@ -1,7 +1,15 @@
 ---
-- name: Create mirror directories
-  file: path=/mnt/mirrordata/void state=directory owner=reposync group=reposync mode=0755
-  file: path=/mnt/mirrordata/void-musl state=directory owner=reposync group=reposync mode=0755
+- name: Install rsync
+  xbps: pkg=rsync state=present
 
-- name: Install sync crontab
-  copy: src=void-mirror.cron dest=/etc/cron.d/void-mirror owner=root group=root mode=0644
+- name: Create mirror directory
+  file: path=/mnt/mirror/void state=directory owner=reposync group=reposync mode=0755
+
+- name: Install sync service (1/3)
+  file: path=/etc/sv/void-mirror state=directory owner=root group=root mode=0755
+
+- name: Install sync service (2/3)
+  copy: src=void-mirror.run dest=/etc/sv/void-mirror/run owner=root group=root mode=0755
+
+- name: Install sync service (3/3)
+  file: src=/etc/sv/void-mirror dest=/var/service/void-mirror state=link owner=root group=root mode=0755
