@@ -1,0 +1,5 @@
+---
+network_address_mode: static
+network_address: 129.110.92.80/24
+network_gateway: 129.110.92.1
+network_dns_mode: static
