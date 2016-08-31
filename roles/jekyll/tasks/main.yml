@@ -19,14 +19,17 @@
     - jekyll
     - jekyll-paginate
 
+- name: Remove stale source files
+  file: path=/tmp/jekyll state=absent
+
 - name: Get Site Files
-  git: clone=yes depth=1 force=yes dest=/tmp/cv_jekyll repo=https://github.com/utdlug/utdlug.github.io.git
+  git: clone=yes depth=1 force=yes dest=/tmp/jekyll repo=https://github.com/utdlug/utdlug.github.io.git
 
 - name: Create Jekyll site folder
   file: path=/var/www/home state=directory owner=root group=nginx mode=0755
 
 - name: Build Site
-  command: jekyll build --destination=/var/www/home/ chdir=/tmp/cv_jekyll
+  command: jekyll build --destination=/var/www/home/ chdir=/tmp/jekyll
 
 - name: Fix Site permissions
   file: path=/var/www/home owner=root group=nginx mode=go+rX recurse=yes
@@ -45,7 +48,7 @@
   notify:
     - nginx
 - name: Copy Site descriptor
-  copy: src=jekyll.conf dest=/etc/nginx/sites-available/ owner=root group=root mode=0644
+  template: src=jekyll.conf dest=/etc/nginx/sites-available/ owner=root group=root mode=0644
   notify:
     - nginx
 

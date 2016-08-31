@@ -3,3 +3,7 @@ network_address_mode: static
 network_address: 129.110.92.80/24
 network_gateway: 129.110.92.1
 network_dns_mode: static
+
+certbot_contact_email: michael.aldridge@utdallas.edu
+certbot_webroot: /var/www/home/
+certbot_domain: lug.utdallas.edu
