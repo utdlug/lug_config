@@ -7,3 +7,8 @@ network_dns_mode: static
 certbot_contact_email: michael.aldridge@utdallas.edu
 certbot_webroot: /var/www/home/
 certbot_domain: lug.utdallas.edu
+
+xbps_repository_main: /mnt/mirror/void/current
+xbps_repository_nonfree: /mnt/mirror/void/current/nonfree
+xbps_repository_multilib: /mnt/mirror/void/current/multilib
+xbps_repository_multilib_nonfree: /mnt/mirror/void/current/multilib/nonfree
