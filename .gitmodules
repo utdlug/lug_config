@@ -13,3 +13,6 @@
 [submodule "roles/xbps-repoconf"]
 	path = roles/xbps-repoconf
 	url = git@github.com:void-ansible-roles/xbps-repoconf.git
+[submodule "roles/jekyll"]
+	path = roles/jekyll
+	url = git@github.com:void-ansible-roles/jekyll.git
