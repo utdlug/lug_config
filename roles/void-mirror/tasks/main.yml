@@ -12,4 +12,10 @@
   copy: src=void-mirror.run dest=/etc/sv/void-mirror/run owner=root group=root mode=0755
 
 - name: Install sync service (3/3)
-  file: src=/etc/sv/void-mirror dest=/var/service/void-mirror state=link owner=root group=root mode=0755
+  file: src=/etc/sv/void-mirror dest=/var/service/void-mirror state=link
+
+- name: Install mirror rules
+  copy: src=mirror.rules dest=/etc/iptables.d/mirror.rules owner=root group=root mode=0640
+  notify:
+    - iptables
+

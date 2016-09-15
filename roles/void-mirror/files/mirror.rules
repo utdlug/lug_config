@@ -1,0 +1,3 @@
+*filter
+-A OUTPUT -p tcp -d repo3.voidlinux.eu --dport 873 -j ACCEPT
+COMMIT
