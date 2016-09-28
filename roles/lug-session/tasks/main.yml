@@ -1,0 +1,6 @@
+---
+- name: Install software
+  xbps: pkg={{ item }} state=present
+  with_items:
+    - rxvt-unicode
+    - xterm

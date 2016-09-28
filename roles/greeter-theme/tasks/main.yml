@@ -1,0 +1,6 @@
+---
+- name: Copy theme
+  copy: src=lug-greeter-theme/ dest=/usr/share/lightdm-webkit/themes/lug owner=root group=root mode=ugo+rX
+
+- name: Correct permissions on theme folder
+  file: path=/usr/share/lightdm-webkit/themes/lug owner=root group=root mode=0755

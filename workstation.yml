@@ -1,0 +1,10 @@
+---
+- hosts: workstation
+  become: yes
+  become_method: sudo
+  roles:
+    - xbps-repoconf
+    - sshd
+    - ntp
+    - lug-session
+    - greeter-theme
