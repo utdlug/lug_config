@@ -1,0 +1,8 @@
+---
+- hosts: void-deployment
+  gather_facts: false
+  become: yes
+  become_method: doas
+  roles:
+    - gateway-base
+    - void-deployment

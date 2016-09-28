@@ -1,9 +1,8 @@
 [gateway]
-lugbox
 cardboard
 
-[utility]
-alexandria
+[void-deployment]
+lugbox
 
 [webserver]
 lug.utdallas.edu
@@ -12,4 +11,5 @@ lug.utdallas.edu
 lug-idler
 
 [workstation]
+office01
 lug01

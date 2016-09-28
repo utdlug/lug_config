@@ -1,0 +1,9 @@
+---
+- name: Copy the void archive
+  copy: src=netboot.tar.gz dest=/srv/tftpboot/netboot.tar.gz owner=root group=wheel mode=0644
+
+- name: Install the void archive
+  command: tar xvzf /srv/tftpboot/netboot.tar.gz -C /srv/tftpboot creates=/srv/tftpboot/pxelinux.0
+
+- name: Copy the autoinstall.cfg
+  copy: src=autoinstall.cfg dest=/var/www/htdocs/preseed/autoinstall.cfg owner=root group=wheel mode=0644

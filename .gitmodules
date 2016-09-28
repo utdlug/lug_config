@@ -37,3 +37,6 @@
 [submodule "roles/greeter-theme/files/lug-greeter-theme"]
 	path = roles/greeter-theme/files/lug-greeter-theme
 	url = git@github.com:utdlug/lug-greeter-theme.git
+[submodule "roles/preseed-overlay"]
+	path = roles/preseed-overlay
+	url = git@github.com:SimpleGateway/preseed-overlay.git
