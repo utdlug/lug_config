@@ -1,5 +1,5 @@
 ---
-network_input_policy: ACCPET
+network_input_policy: ACCEPT
 network_output_policy: ACCEPT
 
 LWG_theme_name: lug
