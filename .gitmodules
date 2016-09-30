@@ -1,42 +1,42 @@
 [submodule "roles/gateway-base"]
 	path = roles/gateway-base
-	url = git@github.com:utdlug/gateway-base
+	url = https://github.com/utdlug/gateway-base
 [submodule "library/ansible_xbps"]
 	path = library/ansible_xbps
-	url = git@github.com:dinoocch/ansible_xbps.git
+	url = https://github.com/dinoocch/ansible_xbps.git
 [submodule "roles/network"]
 	path = roles/network
-	url = git@github.com:void-ansible-roles/network.git
+	url = https://github.com/void-ansible-roles/network.git
 [submodule "roles/certbot"]
 	path = roles/certbot
-	url = git@github.com:void-ansible-roles/certbot.git
+	url = https://github.com/void-ansible-roles/certbot.git
 [submodule "roles/xbps-repoconf"]
 	path = roles/xbps-repoconf
-	url = git@github.com:void-ansible-roles/xbps-repoconf.git
+	url = https://github.com/void-ansible-roles/xbps-repoconf.git
 [submodule "roles/jekyll"]
 	path = roles/jekyll
-	url = git@github.com:void-ansible-roles/jekyll.git
+	url = https://github.com/void-ansible-roles/jekyll.git
 [submodule "roles/xorg"]
 	path = roles/xorg
-	url = git@github.com:void-ansible-roles/xorg.git
+	url = https://github.com/void-ansible-roles/xorg.git
 [submodule "roles/dbus"]
 	path = roles/dbus
-	url = git@github.com:void-ansible-roles/dbus.git
+	url = https://github.com/void-ansible-roles/dbus.git
 [submodule "roles/lightdm"]
 	path = roles/lightdm
-	url = git@github.com:void-ansible-roles/lightdm.git
+	url = https://github.com/void-ansible-roles/lightdm.git
 [submodule "roles/lightdm-webkit-greeter"]
 	path = roles/lightdm-webkit-greeter
-	url = git@github.com:void-ansible-roles/lightdm-webkit-greeter.git
+	url = https://github.com/void-ansible-roles/lightdm-webkit-greeter.git
 [submodule "roles/cinnamon"]
 	path = roles/cinnamon
-	url = git@github.com:void-ansible-roles/cinnamon.git
+	url = https://github.com/void-ansible-roles/cinnamon.git
 [submodule "roles/ntp"]
 	path = roles/ntp
-	url = git@github.com:void-ansible-roles/ntp.git
+	url = https://github.com/void-ansible-roles/ntp.git
 [submodule "roles/greeter-theme/files/lug-greeter-theme"]
 	path = roles/greeter-theme/files/lug-greeter-theme
-	url = git@github.com:utdlug/lug-greeter-theme.git
+	url = https://github.com/utdlug/lug-greeter-theme.git
 [submodule "roles/preseed-overlay"]
 	path = roles/preseed-overlay
-	url = git@github.com:SimpleGateway/preseed-overlay.git
+	url = https://github.com/SimpleGateway/preseed-overlay.git
