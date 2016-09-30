@@ -5,5 +5,8 @@
 - name: Install the void archive
   command: tar xvzf /srv/tftpboot/netboot.tar.gz -C /srv/tftpboot creates=/srv/tftpboot/pxelinux.0
 
-- name: Copy the autoinstall.cfg
-  copy: src=autoinstall.cfg dest=/var/www/htdocs/preseed/autoinstall.cfg owner=root group=wheel mode=0644
+- name: Copy the autoinstall files
+  copy: src={{ item }} dest=/var/www/htdocs/preseed/{{ item }} owner=root group=wheel mode=0644
+  with_items:
+    - autoinstall.cfg
+    - firstBoot.sh
