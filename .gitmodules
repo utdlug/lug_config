@@ -1,6 +1,6 @@
 [submodule "roles/gateway-base"]
 	path = roles/gateway-base
-	url = https://github.com/utdlug/gateway-base
+	url = https://github.com/SimpleGateway/gateway-base.git
 [submodule "library/ansible_xbps"]
 	path = library/ansible_xbps
 	url = https://github.com/dinoocch/ansible_xbps.git
