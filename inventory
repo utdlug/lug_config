@@ -10,6 +10,12 @@ lug.utdallas.edu
 [idlebox]
 lug-idler
 
-[workstation]
+[office]
 office01
-lug01
+
+[luglab]
+luglab00
+
+[workstation:children]
+office
+luglab
