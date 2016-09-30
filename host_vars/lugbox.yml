@@ -5,10 +5,11 @@ dhcp_self: 192.168.1.1
 dhcp_lower: 192.168.1.2
 dhcp_upper: 192.168.1.50
 
-domain: lab.lug.utdallas.edu
+domain: lug
+domain_address: 129.110.92.80
 hostname: lugbox
 
-dns_SOA: 2016041301
+dns_SOA: 2016093000
 
 int_if: fxp0
 ext_if: bge0
@@ -29,9 +30,9 @@ staticHosts:
     addr: 192.168.1.10
     name: office01
 
-stub-zones:
+stubZones:
   UTD:
     name: utdallas.edu
     addresses:
-      primary: 10.180.15.160
-      secondary: 10.182.70.107
+      - 10.180.15.160
+      - 10.182.70.107
