@@ -14,6 +14,9 @@
 - name: Install sync service (3/3)
   file: src=/etc/sv/void-mirror dest=/var/service/void-mirror state=link
 
+- name: Install nginx location
+  copy: src=void-mirror.conf dest=/etc/nginx/locations.d/{{ jekyll_site_url }}/void-mirror.conf owner=root group=root mode=0644
+
 - name: Install mirror rules
   copy: src=mirror.rules dest=/etc/iptables.d/mirror.rules owner=root group=root mode=0640
   notify:
