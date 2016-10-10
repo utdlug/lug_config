@@ -2,5 +2,40 @@
 - name: Install software
   xbps: pkg={{ item }} state=present
   with_items:
+    - R
+    - alsa-lib
+    - alsa-utils
+    - base-devel
+    - chromium
+    - curl
+    - dtrx
+    - emacs
+    - evince
+    - firefox
+    - fish
+    - gedit
+    - ghc
+    - git-all
+    - gvim
+    - htop
+    - libreoffice
+    - mlocate
+    - neovim
+    - openjdk
+    - opera
+    - python3.4-neovim
     - rxvt-unicode
+    - sublime-text3
+    - tmux
+    - tree
+    - urxvt-perls
+    - wget
+    - xclip
+    - xsel
     - xterm
+    - zsh
+    - font-inconsolata-otf
+
+- name: Copy Xresources
+  copy: src=Xresources dest=/etc/X11/Xresources owner=root group=root mode=0644
+
