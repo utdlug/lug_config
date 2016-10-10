@@ -30,9 +30,65 @@ staticHosts:
     addr: 192.168.1.10
     name: office01
   luglab00:
-    mac: 00:1c:23:29:df:38
+    mac: 00:21:70:99:b8:be
     addr: 192.168.1.20
     name: luglab00
+  luglab01:
+    mac: 00:1c:23:29:df:38
+    addr: 192.168.1.21
+    name: luglab01
+  luglab02:
+    mac: 00:21:70:ae:a8:c8
+    addr: 192.168.1.22
+    name: luglab02
+  luglab03:
+    mac: 00:1c:23:2f:90:d6
+    addr: 192.168.1.23
+    name: luglab03
+  luglab04:
+    mac: 14:fe:b5:ba:8a:14
+    addr: 192.168.1.24
+    name: luglab04
+  luglab05:
+    mac: 14:fe:b5:c1:a0:07
+    addr: 192.168.1.25
+    name: luglab05
+  luglab06:
+    mac: 14:fe:b5:a5:6f:b7
+    addr: 192.168.1.26
+    name: luglab06
+  luglab07:
+    mac: 5c:f9:dd:5c:26:26
+    addr: 192.168.1.27
+    name: luglab07
+  luglab08:
+    mac: 14:fe:b5:bf:2a:79
+    addr: 192.168.1.28
+    name: luglab08
+  luglab09:
+    mac: 14:fe:b5:a0:de:2a
+    addr: 192.168.1.29
+    name: luglab09
+  luglab10:
+    mac: 14:fe:b5:bf:2c:23
+    addr: 192.168.1.30
+    name: luglab10
+  luglab11:
+    mac: 14:fe:b5:c1:87:47
+    addr: 192.168.1.31
+    name: luglab11
+  luglab12:
+    mac: 14:fe:b5:99:9b:70
+    addr: 192.168.1.32
+    name: luglab12
+  luglab13:
+    mac: f0:4d:a2:5f:d8:6a
+    addr: 192.168.1.33
+    name: luglab13
+  luglab14:
+    mac: 14:fe:b5:bf:2b:fd
+    addr: 192.168.1.34
+    name: luglab14
 
 stubZones:
   UTD:
