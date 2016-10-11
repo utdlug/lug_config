@@ -25,10 +25,18 @@ staticHosts:
     mac: 00:0f:b5:46:9c:c2
     addr: 192.168.1.3
     name: lug-cardboard
-  office01:
+  lugoffice01:
     mac: c8:9c:dc:6d:20:ba
     addr: 192.168.1.10
-    name: office01
+    name: lug-office01
+  lugoffice02:
+    mac: 00:11:2f:7a:f8:7c
+    addr: 192.168.1.11
+    name: lug-office02
+  lugoffice03:
+    mac: 00:04:61:ab:46:42
+    addr: 192.168.1.12
+    name: lug-office03
   luglab00:
     mac: 00:21:70:99:b8:be
     addr: 192.168.1.20
