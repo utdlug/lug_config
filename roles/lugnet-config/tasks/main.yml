@@ -1,3 +1,6 @@
 ---
 - name: Copy LUGNet config
   copy: src=wpa_supplicant.conf dest=/etc/wpa_supplicant/wpa_supplicant.conf owner=root group=root mode=0640
+
+- name: Install ugly broadcom driver
+  xbps: pkg=broadcom-wl-dkms state=present
