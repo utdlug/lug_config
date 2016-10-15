@@ -1,5 +1,5 @@
 ---
 network_input_policy: ACCEPT
 network_output_policy: ACCEPT
-
+network_enable_wpa_supplicant: true
 LWG_theme_name: lug
