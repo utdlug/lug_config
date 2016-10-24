@@ -40,3 +40,6 @@
 [submodule "roles/preseed-overlay"]
 	path = roles/preseed-overlay
 	url = https://github.com/SimpleGateway/preseed-overlay.git
+[submodule "roles/u2f-sudo"]
+	path = roles/u2f-sudo
+	url = https://github.com/void-ansible-roles/u2f-sudo.git

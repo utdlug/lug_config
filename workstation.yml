@@ -9,3 +9,4 @@
     - lug-session
     - greeter-theme
     - lugnet-config
+    - u2f-sudo

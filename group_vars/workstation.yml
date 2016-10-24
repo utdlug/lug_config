@@ -3,3 +3,24 @@ network_input_policy: ACCEPT
 network_output_policy: ACCEPT
 network_enable_wpa_supplicant: true
 LWG_theme_name: lug
+u2f_sudo_allow_password: false
+u2f_sudo_appid: luglab
+u2f_sudo_cue: true
+u2f_sudo_interactive: true
+sudo_u2f_mappings:
+  lug:
+    username: lug
+    u2fkeys:
+      m_wynn:
+        keyhandle: qXemP1VAK-JPICczFY9idLNC1dvUxqN57t2xALvRJcx4YM1vM4KLQgkxY7tR8srFf6-kNFI5sCo_pSPYrKp6hg
+        userkey: 0462508b28b26ce2168d13489ea7961f38eb24542ca394296fee9c29a7e29f8403bd65e9a8e9f4ecf6ae11200dd262e2072a72230b09ccbfdb50f1afdb36af83c5
+      dinoocch:
+        keyhandle: vh2UxlVoIZpCRBAos3GbN2NZNhFQrZg8f7IAc2vkAzLag8alc5xJSILoVlzGPa6GWGmCQAfzGdtrX-kvzWjvig
+        userkey: 0496cc07c7b12f7a3701bd1d1853cde0b7fb106f8f8090c818aae4b7785b056f1ef7421e0fbc74a48b01b2506da861cb0d2e4b33084f42951faf34bc269e3e83f3
+      maldridge:
+        keyhandle: z0-ucIMrh8YuhBFVetj2va4AzAfKxCS5o_kCV4Usv_PAjz4Fhk7zSJoHFaK5lPEp4kIFoQ46eTzGoZqdpYjd2Q
+        userkey: 04067d3853445ea3cd0653526e0dd57eb5e1cb678553aba921aa5864dd83705703bb3ff0538f33f341a3732995642912479f94664efd2cfdc7cf5d0146b2bda103
+      lafrenierejm:
+        keyhandle: oTtHieZG2PNoXZ9l4bSLb4GydO8z6Fw2zWyVFNgc0rfgJjCwBWgJD54xoUGtIJydzrRzhXckPczfei61Q-GPSw
+        userkey: 04b332e68c4c1107e0ebcfade89ae753fee739a15707423ff2f0ef1a3d6db84d3e7a256c9fc9a582767b089a445dbd3371f85e85baad604172ab065c65419a5772
+u2f_sudo_timestamp_timeout: 0
