@@ -5,3 +5,4 @@
   become_method: doas
   roles:
     - gateway-base
+    - obsd-serial-console
