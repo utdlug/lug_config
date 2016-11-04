@@ -101,6 +101,8 @@ staticHosts:
 stubZones:
   UTD:
     name: utdallas.edu
+    private: true
+    localZone: 10.in-addr.arpa
     addresses:
       - 10.180.15.160
       - 10.182.70.107
