@@ -5,10 +5,10 @@ dhcp_self: 192.168.2.1
 dhcp_lower: 192.168.2.2
 dhcp_upper: 192.168.2.50
 
-domain: luggable.lug.utdallas.edu
+domain: texsaw
 hostname: cardboard
 
-dns_SOA: 2016041501
+dns_SOA: 2016110401
 
 int_if: bge0
 ext_if: re0
@@ -22,6 +22,8 @@ ntp:
 stub-zones:
   UTD:
     name: utdallas.edu
+    private: true
+    localZone: 10.in-addr.arpa
     addresses:
-      primary: 10.180.15.160
-      secondary: 10.182.70.107
+      - 10.180.15.160
+      - 10.182.70.107
