@@ -35,7 +35,7 @@ staticHosts:
       - pizzacuts
       - seconddate
 
-stub-zones:
+stubZones:
   UTD:
     name: utdallas.edu
     private: true
