@@ -25,6 +25,15 @@ staticHosts:
     mac: 44:94:fc:39:50:ea
     addr: 192.168.2.2
     name: wap
+  exploitables:
+    mac: ff:ff:ff:ff:ff:ff
+    addr: 10.176.169.101
+    name: exploitables
+    CNAME:
+      - congratulations
+      - nullserve
+      - pizzacuts
+      - seconddate
 
 stub-zones:
   UTD:
