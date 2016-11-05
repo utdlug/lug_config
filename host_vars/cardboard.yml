@@ -35,6 +35,10 @@ staticHosts:
       - pizzacuts
       - seconddate
       - monit
+  texsaw:
+    mac: ff:ff:ff:ff:ff:00
+    addr: 10.176.169.100
+    name: ctf
 
 stubZones:
   UTD:
