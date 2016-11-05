@@ -34,6 +34,7 @@ staticHosts:
       - nullserve
       - pizzacuts
       - seconddate
+      - monit
 
 stubZones:
   UTD:
