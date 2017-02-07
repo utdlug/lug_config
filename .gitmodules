@@ -7,9 +7,6 @@
 [submodule "roles/network"]
 	path = roles/network
 	url = https://github.com/void-ansible-roles/network.git
-[submodule "roles/certbot"]
-	path = roles/certbot
-	url = https://github.com/void-ansible-roles/certbot.git
 [submodule "roles/xbps-repoconf"]
 	path = roles/xbps-repoconf
 	url = https://github.com/void-ansible-roles/xbps-repoconf.git
@@ -43,3 +40,6 @@
 [submodule "roles/u2f-sudo"]
 	path = roles/u2f-sudo
 	url = https://github.com/void-ansible-roles/u2f-sudo.git
+[submodule "roles/acmetool"]
+	path = roles/acmetool
+	url = git@github.com:void-ansible-roles/acmetool.git

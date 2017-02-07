@@ -8,12 +8,21 @@ certbot_contact_email: michael.aldridge@utdallas.edu
 certbot_webroot: /var/www/home/
 certbot_domain: lug.utdallas.edu
 
+acmetool:
+  sites:
+    - site: lug.utdallas.edu
+      names:
+        - lug.utdallas.edu
+  hostmaster_email: utdlug@gmail.com
+
 jekyll_site_url: lug.utdallas.edu
 jekyll_site_path: /var/www/home
 jekyll_site_name: utdlug
 jekyll_source_url: https://github.com/utdlug/utdlug.github.io.git
 jekyll_use_ssl: true
-jekyll_use_letsencrypt: true
+jekyll_use_letsencrypt: false
+jekyll_ssl_certificate_path: /var/lib/acme/live/lug.utdallas.edu/fullchain
+jekyll_ssl_key_path: /var/lib/acme/live/lug.utdallas.edu/privkey
 
 xbps_repository_main: /mnt/mirror/void/current
 xbps_repository_nonfree: /mnt/mirror/void/current/nonfree

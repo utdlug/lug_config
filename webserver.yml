@@ -7,6 +7,6 @@
     - core-daemons
     - core-programs
     - sshd
-    - certbot
+    - acmetool
     - jekyll
     - void-mirror
